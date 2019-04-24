@@ -54,7 +54,11 @@ registry                       latest              177391bcf802        16 months
      
   ` 2.  Provide as much  as labels while creating image , this helps filtering `
   
-  ` 3 . Use user provided networks while connecting more than one container ` 
+  ` 3 . Use user provided networks while connecting more than one container `
+    
+  ` 4 . Always take back up of the gonfig.json in .docker folder in your home directory before connecting to different
+        repos like docker-hub , gcp repo or aws .( sample config.json attached )
+   `
   
   
   
@@ -145,5 +149,26 @@ round-trip min/avg/max = 0.096/0.123/0.151 ms
 
 ```
  
+ 
+ ```
+ 
+ arun-mac:.docker arunaja$ pwd
+/Users/arunaja/.docker
+arun-mac:.docker arunaja$ ls -ltr
+total 16
+-rw-r--r--@ 1 arunaja  staff   47 Sep 23  2018 daemon.json
+-rw-r--r--@ 1 arunaja  staff  158 Apr 24 20:25 config.json
+arun-mac:.docker arunaja$ cat config.json
+{
+	"auths": {
+		"https://index.docker.io/v1/": {}
+	},
+	"HttpHeaders": {
+		"User-Agent": "Docker-Client/18.06.1-ce (darwin)"
+	},
+	"credsStore": "osxkeychain"
+}
+```
+
  
  
