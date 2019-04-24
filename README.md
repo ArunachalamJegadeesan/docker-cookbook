@@ -57,7 +57,7 @@ registry                       latest              177391bcf802        16 months
   ` 3 . Use user provided networks while connecting more than one container `
     
   ` 4 . Always take back up of the gonfig.json in .docker folder in your home directory before connecting to different
-        repos like docker-hub , gcp repo or aws .( sample config.json attached )
+        container registrys like docker-hub , gcp repo or aws .( sample config.json attached )
    `
   
   
