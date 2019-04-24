@@ -19,5 +19,14 @@
  
  `docker network create --driver bridge aj_net `
  
+ ### Best Practises :
+ 
+ `  1 . Always use naming conventions while naming the conatiner  , this helps filtering ` 
+     
+  ` 2.  Provide as much  as labels while creating image , this helps filtering `
+  
+  ` 3 . Use user provided networks while connecting more than one container ` 
+ 
+ 
  
  
