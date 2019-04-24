@@ -24,6 +24,8 @@ registry                       latest              177391bcf802        16 months
 
 ```
 
+ `docker network create --driver bridge aj_net `
+
 ` docker run -d -p 8080:8080 --name aj_product_catalog --network aj_net ddc338750385 `
 
   ` docker run -d -p 7070:7070 --name aj_catalog_service --network aj_net c59a967f156c `
@@ -44,7 +46,7 @@ registry                       latest              177391bcf802        16 months
 
 ` docker container start $(docker ps -a  -q -f 'name=aj_*') `
  
- `docker network create --driver bridge aj_net `
+
  
  ### Best Practises :
  
