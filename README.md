@@ -3,11 +3,34 @@
 ### Docker Commands:
 
 
+```
+arun-mac:docker-cookbook arunaja$ docker login
+Authenticating with existing credentials...
+Login Succeeded
+```
+`docker build -t arunaja/catalogservice .`
+
+`docker push arunaja/catalogservice`
+
+
+```
+arun-mac:docker-cookbook arunaja$ docker images
+REPOSITORY                     TAG                 IMAGE ID            CREATED             SIZE
+arunaja/bff                    latest              9e96ca05abca        5 hours ago         121MB
+arunaja/catalogservice         latest              c59a967f156c        5 hours ago         140MB
+arunaja/productcatalogwebapp   latest              ddc338750385        7 hours ago         128MB
+openjdk                        8-jdk-alpine        3675b9f543c5        2 weeks ago         105MB
+registry                       latest              177391bcf802        16 months ago       33.3MB
+
+```
+
 ` docker run -d -p 8080:8080 --name aj_product_catalog --network aj_net ddc338750385 `
 
   ` docker run -d -p 7070:7070 --name aj_catalog_service --network aj_net c59a967f156c `
   
   ` docker run -d -p 6060:6060 --name aj_bff --network aj_net 9e96ca05abca `
+  
+  `docker ps -q -f "label=app.name=BFF"`
 
 `docker ps  -f  "name=aj_*" `
 
