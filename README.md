@@ -58,6 +58,8 @@ registry                       latest              177391bcf802        16 months
     
   ` 4 . Always take back up of the gonfig.json in .docker folder in your home directory before connecting to different
         container registrys like docker-hub , gcp repo or aws .( sample config.json attached )
+	
+	5. ** Dont use _ in container name ** . This will fail. Recreating all containers  without ' _' .
    `
   
   
