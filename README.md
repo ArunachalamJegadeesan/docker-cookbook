@@ -24,30 +24,39 @@ registry                       latest              177391bcf802        16 months
 
 ```
 
- `docker network create --driver bridge aj_net `
+`docker network create --driver bridge aj_net `
 
-` docker run -d -p 8080:8080 --name aj_product_catalog --network aj_net ddc338750385 `
 
-  ` docker run -d -p 7070:7070 --name aj_catalog_service --network aj_net c59a967f156c `
-  
-  ` docker run -d -p 6060:6060 --name aj_bff --network aj_net 9e96ca05abca `
-  
+#### Working set of containers, follow the conventions 
+ 
+``` 
+docker run -d -p 7070:7070 --name aj-catalogservice --network aj_net c59a967f156c
+```
+
+```
+docker run -d -p 6060:6060 --name aj-bff --env catalog.service.endpoint.url=http://aj-catalogservice:7070/catalog  --network aj_net 9e96ca05abca
+```
+```
+docker run -d -p 8080:8080 --name aj-product-catalog  --env bff.endpoint.url=http://aj-bff:6060/bff/catalog  --network aj_net ddc338750385
+```
+
+ 
+
   `docker ps -q -f "label=app.name=BFF"`
 
-`docker ps  -f  "name=aj_*" `
+`docker ps  -f  "name=aj-*" `
 
-`docker exec -it aj_product_catalog bin/sh `
+`docker exec -it aj-productcatalog bin/sh `
  
-`eval $"docker ps -q -f 'name=aj_*'"`
+`eval $"docker ps -q -f 'name=aj-*'"`
 
-`docker ps   -q -f  "name=aj_*" `
+`docker ps   -q -f  "name=aj-*" `
 
-` docker container stop $(docker ps -q -f 'name=aj_*') `
+` docker container stop $(docker ps -q -f 'name=aj-*') `
 
-` docker container start $(docker ps -a  -q -f 'name=aj_*') `
- 
+` docker container start $(docker ps -a  -q -f 'name=aj-*') `
 
- 
+
  ### Best Practises :
  
  `  1 . Always use naming conventions while naming the conatiner  , this helps filtering ` 
@@ -57,7 +66,7 @@ registry                       latest              177391bcf802        16 months
   ` 3 . Use user provided networks while connecting more than one container `
     
   ` 4 . Always take back up of the gonfig.json in .docker folder in your home directory before connecting to different
-        container registrys like docker-hub , gcp repo or aws .( sample config.json attached )
+        container registrys like docker-hub , gcp repo or aws .( sample config.json attached ) `
 	
 	5. ** Dont use _ in container name ** . This will fail. Recreating all containers  without ' _' .
    `
