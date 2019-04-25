@@ -150,14 +150,15 @@ arun-mac:java-home arunaja$ docker exec -it aj-product-catalog /bin/sh
        
 ```       
  ```
- /deploy # ping -c 2 aj_catalog_service
-PING aj_catalog_service (172.18.0.3): 56 data bytes
-64 bytes from 172.18.0.3: seq=0 ttl=64 time=0.096 ms
-64 bytes from 172.18.0.3: seq=1 ttl=64 time=0.151 ms
+ /deploy # ping -c 2 aj-bff
+PING aj-bff (172.18.0.3): 56 data bytes
+64 bytes from 172.18.0.3: seq=0 ttl=64 time=0.087 ms
+64 bytes from 172.18.0.3: seq=1 ttl=64 time=0.128 ms
 
---- aj_catalog_service ping statistics ---
+--- aj-bff ping statistics ---
 2 packets transmitted, 2 packets received, 0% packet loss
-round-trip min/avg/max = 0.096/0.123/0.151 ms
+round-trip min/avg/max = 0.087/0.107/0.128 ms
+/deploy #
 
 ```
  
