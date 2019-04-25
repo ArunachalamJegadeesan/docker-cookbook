@@ -182,6 +182,23 @@ arun-mac:.docker arunaja$ cat config.json
 	"credsStore": "osxkeychain"
 }
 ```
+### _Taking a look at container environment variable_
+```
+arun-mac:~ arunaja$ docker exec -it aj-bff /bin/sh
+/deploy # printenv
+catalog.service.endpoint.url=http://aj-catalogservice:7070/catalog
+JAVA_ALPINE_VERSION=8.201.08-r1
+HOSTNAME=5322350904a7
+SHLVL=1
+HOME=/root
+JAVA_VERSION=8u201
+TERM=xterm
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
+LANG=C.UTF-8
+JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+PWD=/deploy
+/deploy #
 
+```
  
  
