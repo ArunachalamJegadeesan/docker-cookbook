@@ -76,7 +76,7 @@ docker run -d -p 8080:8080 --name aj-product-catalog  --env bff.endpoint.url=htt
   #### Workouts 
   
   ```
-  arun-mac:catalogservice arunaja$ docker network inspect aj_net
+ arun-mac:java-home arunaja$ docker network inspect aj_net
 [
     {
         "Name": "aj_net",
@@ -103,25 +103,25 @@ docker run -d -p 8080:8080 --name aj-product-catalog  --env bff.endpoint.url=htt
         },
         "ConfigOnly": false,
         "Containers": {
-            "0f972c4129d2698bd70d89b5ef51350502a1548adf948f5d557e16fae99f3c04": {
-                "Name": "aj_catalog_service",
-                "EndpointID": "a44c274b3049fdaacf2c658afc66f9009768c2055ea642c7a81952fb1862cc63",
+            "316d55957844f01b494888fadc4f95b0692ad1878eafe601405c63d28907b159": {
+                "Name": "aj-product-catalog",
+                "EndpointID": "77b17de0080062b7548c2808a6d74414f7d7bbaf2173b5a595bd9d71b9320f7c",
+                "MacAddress": "02:42:ac:12:00:04",
+                "IPv4Address": "172.18.0.4/16",
+                "IPv6Address": ""
+            },
+            "5322350904a76b235ec473c38a47d06e06397e13224b991acca0821e6cd04a67": {
+                "Name": "aj-bff",
+                "EndpointID": "e1087dd91e159aa5098e1a7b9af08698999ff02be2fd648062d05b5bc6008498",
                 "MacAddress": "02:42:ac:12:00:03",
                 "IPv4Address": "172.18.0.3/16",
                 "IPv6Address": ""
             },
-            "6e2f83026775960a99675c8200e1cfc4ab1314cb2b0ce7e50b3717815b119744": {
-                "Name": "aj_product_catalog",
-                "EndpointID": "2b748cfb0b4ea9cab0bd562ba1b4a8af10f5d609ae9fdc29bd8ccee0730f46b7",
+            "d1d85c378efd5b34b15b3b0a66659d9a73655ffc48bfd58ce7ec24e924fd03d6": {
+                "Name": "aj-catalogservice",
+                "EndpointID": "4f64aa71737ce77657fd15311bf9cac1a550344129d3559e40c02c7d81d0baf8",
                 "MacAddress": "02:42:ac:12:00:02",
                 "IPv4Address": "172.18.0.2/16",
-                "IPv6Address": ""
-            },
-            "a3d915f07807f10ea934480e0519d0e2a53530cc295f222ee0dce6d46d933c2f": {
-                "Name": "aj_bff",
-                "EndpointID": "f13e3ea2cae8d4fd4207db079350d7b612e2344a536a65092c8b1622dfa8a1eb",
-                "MacAddress": "02:42:ac:12:00:04",
-                "IPv4Address": "172.18.0.4/16",
                 "IPv6Address": ""
             }
         },
