@@ -132,7 +132,7 @@ docker run -d -p 8080:8080 --name aj-product-catalog  --env bff.endpoint.url=htt
 ```
 
 ```
-docker exec -it aj_bff_service /bin/sh
+arun-mac:java-home arunaja$ docker exec -it aj-product-catalog /bin/sh
 /deploy # ip addr show
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -142,10 +142,11 @@ docker exec -it aj_bff_service /bin/sh
     link/ipip 0.0.0.0 brd 0.0.0.0
 3: ip6tnl0@NONE: <NOARP> mtu 1452 qdisc noop state DOWN qlen 1
     link/tunnel6 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00 brd 00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
-100: eth0@if101: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP
-    link/ether 02:42:ac:11:00:05 brd ff:ff:ff:ff:ff:ff
-    inet 172.17.0.5/16 brd 172.17.255.255 scope global eth0
+19: eth0@if20: <BROADCAST,MULTICAST,UP,LOWER_UP,M-DOWN> mtu 1500 qdisc noqueue state UP
+    link/ether 02:42:ac:12:00:04 brd ff:ff:ff:ff:ff:ff
+    inet 172.18.0.4/16 brd 172.18.255.255 scope global eth0
        valid_lft forever preferred_lft forever
+/deploy #
        
 ```       
  ```
