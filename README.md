@@ -30,8 +30,7 @@ registry                       latest              177391bcf802        16 months
 #### Working set of containers, follow the conventions 
 
 ```
-docker run --name dev-mysql -e MYSQL_ROOT_PASSWORD=root -d --network=aj_net  mysql:latest
-
+docker run --name dev-mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306  --network aj_net -d 2f52e94d8acb
 ```
  
 ``` 
