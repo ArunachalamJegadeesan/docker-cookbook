@@ -35,7 +35,9 @@ docker run --name dev-mysql -e MYSQL_ROOT_PASSWORD=root -d --network=aj_net  mys
 ```
  
 ``` 
-docker run -d -p 7070:7070 --name aj-catalogservice --network aj_net c59a967f156c
+
+docker run -d -p 7070:7070 -e spring.datasource.url='jdbc:mysql://dev-mysql:3306/test?createDatabaseIfNotExist=true&useSSL=false'  -e spring.datasource.username='root'  -e spring.datasource.password='root' --name aj-catalogservice --network aj_net 4622dbf0fc53
+
 ```
 
 ```
